@@ -34,13 +34,20 @@
 
         /* --- PDF Compatibility Styles --- */
         @media print {
+            /* Universal box-sizing for consistent layout */
+            *, *::before, *::after {
+                box-sizing: border-box !important;
+            }
+
             body {
                 background-color: #ffffff !important; /* Ensure white background for print */
                 color: #000000 !important; /* Ensure black text for readability */
                 -webkit-print-color-adjust: exact; /* For printing backgrounds/colors */
                 print-color-adjust: exact;
-                margin: 0; /* Remove default body margins for print */
-                padding: 0; /* Remove default body padding for print */
+                margin: 0 !important; /* Remove default body margins for print */
+                padding: 0 !important; /* Remove default body padding for print */
+                min-height: auto !important; /* Disable min-height for print */
+                display: block !important; /* Ensure body is block for print flow */
             }
 
             /* Remove shadows, gradients, and subtle backgrounds for cleaner print */
@@ -76,37 +83,59 @@
             img {
                 max-width: 100% !important;
                 height: auto !important;
-                display: block; /* Ensure images are block-level for consistent flow */
+                display: block !important; /* Ensure images are block-level for consistent flow */
                 margin: 0.5rem auto !important; /* Center images and add vertical margin */
             }
 
             /* Improve content breaking across pages */
             section {
-                page-break-inside: avoid; /* Keep sections together if possible */
-                page-break-after: auto; /* Allow page breaks after sections */
+                page-break-inside: avoid !important; /* Keep sections together if possible */
+                page-break-after: auto !important; /* Allow page breaks after sections */
                 margin-bottom: 1.5rem !important; /* Add more space after sections for better page breaks */
+                border: none !important; /* Remove section borders if they cause issues */
             }
             h1, h2, h3, h4, h5, h6 {
-                page-break-after: avoid; /* Avoid page breaks immediately after headings */
-                page-break-inside: avoid;
+                page-break-after: avoid !important; /* Avoid page breaks immediately after headings */
+                page-break-inside: avoid !important;
                 margin-top: 1rem !important; /* Ensure headings have some space above them */
+                orphans: 3; /* Ensure at least 3 lines of text before a page break */
+                widows: 3; /* Ensure at least 3 lines of text after a page break */
+            }
+            p, ul, ol, li {
+                page-break-inside: avoid !important;
+                orphans: 3;
+                widows: 3;
             }
             ul, ol {
-                page-break-inside: avoid;
                 margin-bottom: 0.5rem !important; /* Add some margin after lists */
             }
             li {
                 margin-bottom: 0.2rem !important; /* Small margin for list items */
             }
 
-            /* Ensure grid layouts adapt for print */
+            /* Ensure grid layouts adapt for print by completely stacking */
             .grid {
-                display: block !important; /* Stack grid items for print */
+                display: block !important; /* Force grid to stack as blocks */
+                gap: 0 !important; /* Remove gaps */
             }
             .grid > div {
                 width: 100% !important; /* Ensure grid items take full width */
                 margin-bottom: 1rem !important; /* Add space between stacked grid items */
+                padding: 0.5rem !important; /* Adjust padding for stacked items */
             }
+            /* Specific targeting for the 3-column benefits grid */
+            .grid-cols-1.md:grid-cols-3 > div {
+                display: block !important;
+                width: 100% !important;
+                margin-bottom: 1rem !important;
+            }
+            /* Specific targeting for the 2-column grids */
+            .grid-cols-1.md:grid-cols-2 > div {
+                display: block !important;
+                width: 100% !important;
+                margin-bottom: 1rem !important;
+            }
+
 
             /* Adjust button display for print */
             .flex-col.sm:flex-row.justify-center.gap-4 {
@@ -114,6 +143,7 @@
                 flex-direction: column !important; /* Stack buttons vertically */
                 align-items: center !important; /* Center stacked buttons */
                 gap: 0.5rem !important; /* Reduce gap for print */
+                margin-top: 1.5rem !important; /* Add space above buttons */
             }
             .flex-col.sm:flex-row.justify-center.gap-4 a {
                 display: block !important; /* Make buttons block-level for full width */
@@ -124,6 +154,7 @@
                 border: 1px solid #312e81 !important; /* Ensure borders are visible */
                 color: #312e81 !important; /* Dark text for primary button */
                 background-color: #ffffff !important; /* White background */
+                text-decoration: none !important; /* Remove underline from links */
             }
             .flex-col.sm:flex-row.justify-center.gap-4 a.bg-indigo-600 {
                 background-color: #312e81 !important; /* Dark background for primary button */
@@ -135,6 +166,14 @@
                 max-width: 100% !important;
                 width: 100% !important;
                 padding: 1rem !important; /* Adjust padding for the main container */
+                border-radius: 0 !important; /* Remove rounded corners for print */
+                box-shadow: none !important; /* Ensure no shadow on main container */
+            }
+            .min-h-screen {
+                min-height: auto !important; /* Disable min-height for print */
+            }
+            .flex.items-center.justify-center {
+                display: block !important; /* Disable flex centering for print */
             }
         }
     </style>
