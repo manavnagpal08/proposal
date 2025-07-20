@@ -94,6 +94,11 @@
                 margin-bottom: 1.5rem !important; /* Add more space after sections for better page breaks */
                 border: none !important; /* Remove section borders if they cause issues */
             }
+            /* Force major sections to start on a new page */
+            section:not(:first-child) { /* Apply to all sections except the first one */
+                page-break-before: always !important;
+            }
+
             h1, h2, h3, h4, h5, h6 {
                 page-break-after: avoid !important; /* Avoid page breaks immediately after headings */
                 page-break-inside: avoid !important;
@@ -122,6 +127,7 @@
                 width: 100% !important; /* Ensure grid items take full width */
                 margin-bottom: 1rem !important; /* Add space between stacked grid items */
                 padding: 0.5rem !important; /* Adjust padding for stacked items */
+                page-break-inside: avoid !important; /* Prevent individual grid items from breaking */
             }
             /* Specific targeting for the 3-column benefits grid */
             .grid-cols-1.md:grid-cols-3 > div {
