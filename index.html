@@ -1,46 +1,371 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ScreenerPro - HR Proposal</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ScreenerPro - HR Proposal</title>
+    <!-- Tailwind CSS CDN for easy styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles for the Inter font and general body styling */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* Light gray background */
+            color: #374151; /* Dark gray text */
+            line-height: 1.6;
+        }
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e0e0e0;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #a0a0a0;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #808080;
+        }
+    </style>
 </head>
-<body>
-  <div class="container">
-    <header>
-      <img src="logo.png" alt="ScreenerPro Logo" class="logo" />
-      <h1>ScreenerPro</h1>
-      <p class="tagline">AI-powered Resume Screening for Smarter Hiring</p>
-    </header>
+<body class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl w-full bg-white shadow-xl rounded-xl p-8 space-y-8">
+        <!-- Header Section -->
+        <header class="text-center mb-8">
+            <!-- ScreenerPro Logo - Using a placeholder for demonstration -->
+            <!-- In a real application, replace this with your actual logo image URL -->
+            <img src="https://placehold.co/150x50/60A5FA/FFFFFF?text=ScreenerPro+Logo" alt="ScreenerPro Logo" class="mx-auto h-16 w-auto mb-4 rounded-lg shadow-md" />
+            <h1 class="text-5xl font-extrabold text-gray-900 mb-2">ScreenerPro</h1>
+            <p class="text-xl text-indigo-600 font-medium">AI-powered Resume Screening for Smarter Hiring</p>
+        </header>
 
-    <main>
-      <section class="highlight">
-        <h2>Why ScreenerPro?</h2>
-        <p>ScreenerPro automates resume analysis using advanced AI, helping HR teams save time and identify top talent efficiently.</p>
-        <ul>
-          <li>⚡ Instantly screen 100+ resumes</li>
-          <li>📊 Visual scoring + auto-shortlisting</li>
-          <li>📥 Download insights, send emails, track applicants</li>
-          <li>🔗 Candidate & HR Portals with secure login</li>
-        </ul>
-      </section>
+        <!-- Main Content Area -->
+        <main class="space-y-10">
+            <!-- Why ScreenerPro? Section - Enhanced -->
+            <section class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white p-8 rounded-lg shadow-lg">
+                <h2 class="text-4xl font-bold mb-4 text-center">Why ScreenerPro?</h2>
+                <p class="text-lg text-center mb-6">ScreenerPro revolutionizes talent acquisition by automating resume analysis with cutting-edge AI, empowering HR teams to save valuable time, reduce bias, and pinpoint top-tier talent with unparalleled efficiency.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white text-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="text-2xl font-semibold mb-3">⚡ Unmatched Speed</h3>
+                        <p>Instantly screen hundreds to thousands of resumes, drastically cutting down initial review time from days to minutes.</p>
+                    </div>
+                    <div class="bg-white text-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="text-2xl font-semibold mb-3">📊 Intelligent Insights</h3>
+                        <p>Leverage visual scoring, automated shortlisting, and comprehensive data analytics for data-driven hiring decisions.</p>
+                    </div>
+                    <div class="bg-white text-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="text-2xl font-semibold mb-3">🔗 Seamless Workflow</h3>
+                        <p>Download detailed insights, send personalized emails, and track every applicant's journey within a unified platform.</p>
+                    </div>
+                    <div class="bg-white text-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="text-2xl font-semibold mb-3">🔒 Secure Portals</h3>
+                        <p>Dedicated Candidate and HR Portals ensure secure login and a tailored experience for all users.</p>
+                    </div>
+                    <div class="bg-white text-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="text-2xl font-semibold mb-3">🎯 Precision Matching</h3>
+                        <p>Our AI goes beyond keywords, understanding context and relevance to match candidates with job requirements accurately.</p>
+                    </div>
+                    <div class="bg-white text-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="text-2xl font-semibold mb-3">⚖️ Bias Reduction</h3>
+                        <p>Minimize unconscious bias in screening by focusing on skills and experience, promoting fair and equitable hiring.</p>
+                    </div>
+                </div>
+            </section>
 
-      <section class="cta">
-        <a href="https://screenerpro.streamlit.app/" class="button" target="_blank">🌐 Try the HR Portal</a>
-        <a href="https://candidate-screeneerpro.streamlit.app/" class="button secondary" target="_blank">👤 Try Candidate Portal</a>
-      </section>
+            <!-- Benefits for Different Stakeholders Section -->
+            <section class="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Benefits for Every Stakeholder</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <h3 class="text-2xl font-semibold text-indigo-700 mb-3">For HR Managers</h3>
+                        <p class="text-gray-700 mb-4">Gain strategic oversight with comprehensive analytics, ensuring compliance and optimizing recruitment budget allocation.</p>
+                        <ul class="list-disc list-inside text-gray-600 text-left mx-auto max-w-xs space-y-1">
+                            <li>Reduced time-to-hire.</li>
+                            <li>Improved candidate quality.</li>
+                            <li>Enhanced team productivity.</li>
+                        </ul>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-2xl font-semibold text-indigo-700 mb-3">For Recruiters</h3>
+                        <p class="text-gray-700 mb-4">Focus on engaging with top talent, not sifting through endless resumes. Streamline your daily tasks and hit your hiring targets faster.</p>
+                        <ul class="list-disc list-inside text-gray-600 text-left mx-auto max-w-xs space-y-1">
+                            <li>Automated initial screening.</li>
+                            <li>Personalized candidate communication.</li>
+                            <li>Efficient pipeline management.</li>
+                        </ul>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-2xl font-semibold text-indigo-700 mb-3">For Hiring Managers</h3>
+                        <p class="text-gray-700 mb-4">Receive a curated shortlist of highly relevant candidates, saving you time and ensuring you interview only the best fits for your team.</p>
+                        <ul class="list-disc list-inside text-gray-600 text-left mx-auto max-w-xs space-y-1">
+                            <li>Access to top-tier talent.</li>
+                            <li>Clear candidate insights.</li>
+                            <li>Faster decision-making.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
 
-      <section class="contact">
-        <h3>Contact Us</h3>
-        <p>📞 Manav Nagpal – +91 9896817707</p>
-        <p>📧 manav.nagpal2005@gmail.com | screenerpro.ai@gmail.com</p>
-      </section>
-    </main>
+            <!-- Advanced AI Capabilities Section -->
+            <section class="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Advanced AI Capabilities</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-indigo-700 mb-3">Semantic Understanding & Contextual Matching</h3>
+                        <p class="text-gray-700 mb-4">ScreenerPro's AI leverages advanced Natural Language Processing (NLP) and deep learning models, trained on extensive datasets of job descriptions and resumes. This allows it to understand the nuanced meaning of phrases, identify transferable skills, and match candidates based on contextual relevance, not just keyword presence.</p>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li>Analyzes job responsibilities and achievements, not just titles.</li>
+                            <li>Identifies synonyms and related concepts for broader matching.</li>
+                            <li>Parses diverse resume formats (PDF, DOCX) with high accuracy.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold text-indigo-700 mb-3">Predictive Analytics & Dynamic Scoring</h3>
+                        <p class="text-gray-700 mb-4">Our proprietary algorithms generate a dynamic compatibility score for each candidate, continuously learning and adapting. This score predicts potential fit based on experience, education, validated skills, and even indicators of cultural alignment, providing a holistic view beyond static qualifications.</p>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li>Customizable weighting for different job criteria.</li>
+                            <li>Detailed score breakdown with rationale for transparency.</li>
+                            <li>Identifies high-potential candidates for long-term roles.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold text-indigo-700 mb-3">Automated Skill & Competency Extraction</h3>
+                        <p class="text-gray-700 mb-4">ScreenerPro automatically identifies, categorizes, and quantifies both hard and soft skills from resumes. It builds a standardized skill inventory, enabling easy comparison, talent mapping, and identification of skill gaps within your existing workforce or candidate pool.</p>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li>Recognizes technical skills, soft skills, and industry-specific expertise.</li>
+                            <li>Validates skill proficiency levels where indicated.</li>
+                            <li>Provides insights into emerging skill trends among applicants.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold text-indigo-700 mb-3">Robust Bias Mitigation Framework</h3>
+                        <p class="text-gray-700 mb-4">Committed to fair hiring, ScreenerPro incorporates a multi-layered bias mitigation framework. This includes options for blind screening (anonymizing demographic data), continuous auditing of AI decisions for fairness, and a focus on merit-based evaluation to promote diversity and inclusion in your talent pipeline.</p>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li>Configurable anonymization settings for various data points.</li>
+                            <li>Regular fairness audits and transparent reporting.</li>
+                            <li>Promotes equitable opportunities for all applicants.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
 
-    <footer>
-      <p>&copy; 2025 ScreenerPro. All rights reserved.</p>
-    </footer>
-  </div>
+            <!-- Interview Management Section -->
+            <section class="bg-gray-100 p-8 rounded-lg shadow-lg border border-gray-200">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Streamlined Interview Management</h2>
+                <p class="text-lg text-center text-gray-700 mb-8">ScreenerPro extends its capabilities to simplify your interview process, from scheduling to feedback collection, ensuring a smooth experience for both candidates and hiring teams.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-indigo-700 mb-3">Automated Interview Scheduling</h3>
+                        <p class="text-gray-700 mb-4">ScreenerPro integrates with popular calendar services (e.g., Google Calendar, Outlook Calendar) to automate interview scheduling. Candidates can self-schedule based on real-time interviewer availability, significantly reducing manual coordination and scheduling conflicts.</p>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li>Real-time availability synchronization.</li>
+                            <li>Automated reminders and confirmations for all participants.</li>
+                            <li>Customizable interview slots and durations.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold text-indigo-700 mb-3">Structured Interview Kits & Scorecards</h3>
+                        <p class="text-gray-700 mb-4">Equip your interviewers with standardized interview kits and digital scorecards directly within the platform. This ensures consistent evaluation criteria across candidates, minimizes subjective bias, and facilitates objective, structured feedback collection for every interview.</p>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li>Customizable questions and evaluation rubrics per role.</li>
+                            <li>Direct feedback submission and rating within the candidate profile.</li>
+                            <li>Consolidated interviewer feedback for easy comparison and review.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold text-indigo-700 mb-3">Certificate Management & Verification</h3>
+                        <p class="text-gray-700 mb-4">ScreenerPro provides a centralized system for managing and verifying candidate certifications and credentials. Upload, store, and track all relevant certificates, ensuring compliance and validating candidate qualifications directly within the platform.</p>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li>Secure storage for candidate certificates.</li>
+                            <li>Automated reminders for expiring certifications.</li>
+                            <li>Verification workflows for credential validation.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold text-indigo-700 mb-3">Post-Interview Analytics</h3>
+                        <p class="text-gray-700 mb-4">Analyze comprehensive interview performance data to identify top-performing interviewers, optimize your question sets, and understand patterns in candidate feedback. This data-driven approach leads to continuous improvement in your overall interview process and hiring outcomes.</p>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li>Interviewer effectiveness reports and training needs identification.</li>
+                            <li>Feedback consistency and bias analysis.</li>
+                            <li>Correlation of interview scores with successful hiring outcomes.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Collaboration & Workflow Tools Section -->
+            <section class="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Collaboration & Workflow Tools</h2>
+                <p class="text-lg text-center text-gray-700 mb-8">ScreenerPro's Collaboration Hub fosters seamless teamwork and communication across your HR department and hiring teams, centralizing all recruitment-related activities.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-indigo-700 mb-3">Configurable Team Dashboards & Access Control</h3>
+                        <p class="text-gray-700 mb-4">Empower your team with custom dashboards tailored to specific roles (e.g., Recruiter, Hiring Manager, HR Admin). Granular, role-based access control ensures that each team member sees and interacts only with the data relevant to their responsibilities, maintaining data integrity and security.</p>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li>Personalized candidate pipelines for each team member.</li>
+                            <li>Secure data segregation based on user permissions.</li>
+                            <li>Centralized activity logs for team oversight.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold text-indigo-700 mb-3">Integrated Real-time Feedback & Annotations</h3>
+                        <p class="text-gray-700 mb-4">Facilitate seamless team collaboration directly within candidate profiles. Team members can add private or public notes, assign star ratings, tag specific skills, and engage in threaded discussions, ensuring all feedback is consolidated and accessible in real-time, eliminating email chains and fragmented communication.</p>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li>Inline commenting on specific resume sections.</li>
+                            <li>Customizable rating scales for consistent evaluation.</li>
+                            <li>Notification system for new feedback and mentions.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold text-indigo-700 mb-3">Team Communication & File Sharing</h3>
+                        <p class="text-gray-700 mb-4">The Collaboration Hub includes features for internal team announcements, direct messaging between team members, and secure file sharing. Keep everyone informed and ensure easy access to important documents and resources.</p>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li>Centralized announcements board.</li>
+                            <li>Secure direct messaging system.</li>
+                            <li>Shared resource library for templates and guides.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold text-indigo-700 mb-3">Customizable Recruitment Workflows & Automation</h3>
+                        <p class="text-gray-700 mb-4">Design and automate your unique recruitment workflows within ScreenerPro. Easily define custom stages (e.g., Initial Screen, Technical Interview, Final Offer) and set up automated actions, such as sending templated emails, moving candidates to the next stage, or triggering notifications, based on specific criteria or manual actions.</p>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li>Drag-and-drop interface for pipeline management.</li>
+                            <li>Automated email templates for various candidate communications.</li>
+                            <li>Performance tracking and bottlenecks identification by stage.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold text-indigo-700 mb-3">Robust ATS Integration</h3>
+                        <p class="text-gray-700 mb-4">ScreenerPro provides robust API capabilities for seamless integration with your existing Applicant Tracking Systems (ATS) and other HR tech solutions. This ensures automated, bi-directional data synchronization, reducing manual entry, preventing data silos, and enhancing your end-to-end recruitment process efficiency.</p>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li>Bi-directional data synchronization with compatible ATS platforms.</li>
+                            <li>Automated candidate status updates across integrated platforms.</li>
+                            <li>Comprehensive API documentation and dedicated integration support.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Employee Management Section -->
+            <section class="bg-gray-100 p-8 rounded-lg shadow-lg border border-gray-200">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Comprehensive Employee Management</h2>
+                <p class="text-lg text-center text-gray-700 mb-8">Beyond recruitment, ScreenerPro offers robust employee management features to support your workforce throughout their lifecycle within the organization.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-indigo-700 mb-3">Employee Onboarding & Offboarding</h3>
+                        <p class="text-gray-700 mb-4">Streamline the entire onboarding process with automated checklists, document management, and task assignments. Similarly, manage offboarding procedures efficiently to ensure compliance and smooth transitions.</p>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li>Automated task assignment for HR, IT, Managers.</li>
+                            <li>Centralized repository for employee documents.</li>
+                            <li>Customizable onboarding workflows.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold text-indigo-700 mb-3">Performance Management & Reviews</h3>
+                        <p class="text-gray-700 mb-4">Facilitate regular performance reviews with customizable templates, goal tracking, and feedback mechanisms. Support continuous performance development and align employee goals with organizational objectives.</p>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li>Goal setting and progress tracking.</li>
+                            <li>360-degree feedback capabilities.</li>
+                            <li>Performance analytics and reporting.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold text-indigo-700 mb-3">Training & Development Tracking</h3>
+                        <p class="text-gray-700 mb-4">Track employee training progress, certifications, and development plans. Identify skill gaps within your existing workforce and recommend relevant training programs to foster continuous learning.</p>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li>Centralized training records.</li>
+                            <li>Certification expiry reminders.</li>
+                            <li>Personalized learning path recommendations.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold text-indigo-700 mb-3">Employee Directory & Information Hub</h3>
+                        <p class="text-gray-700 mb-4">Maintain a comprehensive, searchable employee directory with key contact information, roles, departments, and reporting structures. Serve as a central hub for all employee-related data.</p>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li>Quick access to employee profiles.</li>
+                            <li>Organizational chart visualization.</li>
+                            <li>Secure data management for sensitive information.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reporting & Analytics Section -->
+            <section class="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Comprehensive Reporting & Analytics</h2>
+                <p class="text-lg text-center text-gray-700 mb-8">Gain actionable insights into your recruitment and workforce management processes with ScreenerPro's robust reporting and analytics suite. Make data-driven decisions to continuously optimize your HR strategy.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-indigo-700 mb-3">Hiring Funnel Visualization</h3>
+                        <p class="text-gray-700 mb-4">Visualize your entire hiring pipeline from application to hire. Identify bottlenecks, conversion rates at each stage, and areas for improvement to streamline your process.</p>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li>Real-time conversion metrics.</li>
+                            <li>Time-in-stage analysis.</li>
+                            <li>Customizable funnel views.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold text-indigo-700 mb-3">Candidate Source Tracking</h3>
+                        <p class="text-gray-700 mb-4">Understand which channels deliver your best candidates. Track source effectiveness, cost-per-hire by source, and quality of applicants from various platforms to optimize your sourcing strategy.</p>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li>Performance metrics for job boards, referrals, etc.</li>
+                            <li>ROI analysis for recruitment campaigns.</li>
+                            <li>Data-driven budget allocation.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold text-indigo-700 mb-3">Diversity & Inclusion Metrics</h3>
+                        <p class="text-gray-700 mb-4">Monitor and report on key diversity metrics throughout your recruitment funnel. Identify areas where bias might inadvertently occur and track progress towards your D&I goals with actionable data.</p>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li>Anonymized demographic insights.</li>
+                            <li>Fairness score tracking.</li>
+                            <li>Compliance reporting support.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold text-indigo-700 mb-3">Customizable Reports & Exports</h3>
+                        <p class="text-gray-700 mb-4">Generate custom reports on any data point within ScreenerPro. Export data in various formats (CSV, PDF) for further analysis or presentation to stakeholders, ensuring you always have the insights you need.</p>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li>Drag-and-drop report builder.</li>
+                            <li>Scheduled report delivery.</li>
+                            <li>Integration with business intelligence tools.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Call to Action Section -->
+            <section class="text-center bg-indigo-50 p-8 rounded-lg shadow-inner">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">Experience ScreenerPro Today!</h2>
+                <p class="text-lg text-gray-700 mb-8">Ready to transform your hiring process? Explore our portals and see the power of AI-driven resume screening in action.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="https://screenerpro.streamlit.app/" class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-md shadow-lg text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-300 transform hover:scale-105" target="_blank">
+                        🌐 Try the HR Portal
+                    </a>
+                    <a href="https://candidate-screeneerpro.streamlit.app/" class="inline-flex items-center justify-center px-8 py-4 border border-indigo-600 text-base font-medium rounded-md shadow-lg text-indigo-600 bg-white hover:bg-indigo-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-300 transform hover:scale-105" target="_blank">
+                        👤 Try Candidate Portal
+                    </a>
+                </div>
+            </section>
+
+            <!-- Contact Us Section -->
+            <section class="text-center p-8 rounded-lg shadow-lg bg-gray-100">
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">Connect with Us</h3>
+                <p class="text-lg text-gray-700 mb-2">📞 Manav Nagpal – +91 9896817707</p>
+                <p class="text-lg text-gray-700">📧 <a href="mailto:manav.nagpal2005@gmail.com" class="text-indigo-600 hover:underline">manav.nagpal2005@gmail.com</a> | <a href="mailto:screenerpro.ai@gmail.com" class="text-indigo-600 hover:underline">screenerpro.ai@gmail.com</a></p>
+            </section>
+        </main>
+
+        <!-- Footer Section -->
+        <footer class="text-center text-gray-500 mt-10 text-sm">
+            <p>&copy; 2025 ScreenerPro. All rights reserved.</p>
+        </footer>
+    </div>
 </body>
 </html>
