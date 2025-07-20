@@ -31,6 +31,75 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #808080;
         }
+
+        /* --- PDF Compatibility Styles --- */
+        @media print {
+            body {
+                background-color: #ffffff !important; /* Ensure white background for print */
+                color: #000000 !important; /* Ensure black text for readability */
+                -webkit-print-color-adjust: exact; /* For printing backgrounds/colors */
+                print-color-adjust: exact;
+            }
+
+            /* Remove shadows, gradients, and subtle backgrounds for cleaner print */
+            .shadow-xl, .shadow-lg, .shadow-md, .shadow-inner {
+                box-shadow: none !important;
+            }
+            .bg-gradient-to-r, .bg-indigo-50, .bg-gray-100 {
+                background-image: none !important;
+                background-color: #ffffff !important;
+            }
+            .text-white {
+                color: #000000 !important; /* Ensure white text on colored backgrounds becomes black */
+            }
+            .text-indigo-600, .text-indigo-700 {
+                color: #312e81 !important; /* Darker indigo for better contrast on print */
+            }
+            .border {
+                border-color: #d1d5db !important; /* Ensure borders are visible */
+            }
+
+            /* Adjust padding/margins for print layout */
+            .p-8, .py-12, .px-4, .sm:px-6, .lg:px-8 {
+                padding: 1rem !important; /* Standardize padding for print */
+            }
+            .space-y-8 > *, .space-y-10 > * {
+                margin-bottom: 1rem !important; /* Standardize vertical spacing */
+            }
+            .mb-8, .mb-6, .mb-4, .mb-3, .mb-2 {
+                margin-bottom: 0.5rem !important; /* Reduce margins for tighter print layout */
+            }
+
+            /* Ensure image visibility and prevent overflow */
+            img {
+                max-width: 100% !important;
+                height: auto !important;
+            }
+
+            /* Break content appropriately across pages */
+            section {
+                page-break-inside: avoid; /* Avoid breaking sections across pages if possible */
+                page-break-after: auto; /* Allow page breaks after sections */
+            }
+            h1, h2, h3, h4, h5, h6 {
+                page-break-after: avoid; /* Avoid page breaks immediately after headings */
+                page-break-inside: avoid;
+            }
+            ul, ol {
+                page-break-inside: avoid;
+            }
+
+            /* Remove elements not relevant to print (e.g., interactive buttons if they cause issues) */
+            .flex-col.sm:flex-row.justify-center.gap-4 {
+                display: block !important; /* Stack buttons vertically if needed */
+                text-align: center;
+            }
+            .flex-col.sm:flex-row.justify-center.gap-4 a {
+                display: inline-block !important;
+                margin: 0.5rem !important;
+                width: auto !important; /* Allow buttons to size naturally */
+            }
+        }
     </style>
 </head>
 <body class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
