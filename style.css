@@ -1,0 +1,87 @@
+/* style.css - ScreenerPro Proposal */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background: #f0f7ff;
+  color: #1a1a1a;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.logo {
+  width: 120px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+h1 {
+  margin: 0.5rem 0 0.2rem;
+  font-size: 2.2rem;
+  color: #007bff;
+}
+
+.tagline {
+  font-size: 1.1rem;
+  color: #444;
+}
+
+.highlight {
+  background: #e6f2ff;
+  border-left: 4px solid #007bff;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.highlight ul {
+  padding-left: 1.5rem;
+}
+
+.button {
+  display: inline-block;
+  margin: 0.5rem 1rem 1rem 0;
+  padding: 0.8rem 1.5rem;
+  background: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: 0.2s ease-in-out;
+}
+
+.button:hover {
+  background: #0056b3;
+}
+
+.button.secondary {
+  background: #00b3b3;
+}
+
+.button.secondary:hover {
+  background: #008080;
+}
+
+.contact {
+  margin-top: 2rem;
+  background: #dfefff;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #888;
+}
