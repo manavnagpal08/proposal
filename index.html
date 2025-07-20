@@ -39,6 +39,8 @@
                 color: #000000 !important; /* Ensure black text for readability */
                 -webkit-print-color-adjust: exact; /* For printing backgrounds/colors */
                 print-color-adjust: exact;
+                margin: 0; /* Remove default body margins for print */
+                padding: 0; /* Remove default body padding for print */
             }
 
             /* Remove shadows, gradients, and subtle backgrounds for cleaner print */
@@ -47,7 +49,7 @@
             }
             .bg-gradient-to-r, .bg-indigo-50, .bg-gray-100 {
                 background-image: none !important;
-                background-color: #ffffff !important;
+                background-color: #ffffff !important; /* Ensure backgrounds are white */
             }
             .text-white {
                 color: #000000 !important; /* Ensure white text on colored backgrounds becomes black */
@@ -59,45 +61,80 @@
                 border-color: #d1d5db !important; /* Ensure borders are visible */
             }
 
-            /* Adjust padding/margins for print layout */
+            /* Adjust padding/margins for print layout to be less aggressive */
             .p-8, .py-12, .px-4, .sm:px-6, .lg:px-8 {
-                padding: 1rem !important; /* Standardize padding for print */
+                padding: 0.75rem !important; /* Slightly reduced padding for print */
             }
             .space-y-8 > *, .space-y-10 > * {
-                margin-bottom: 1rem !important; /* Standardize vertical spacing */
+                margin-bottom: 0.75rem !important; /* Standardize vertical spacing */
             }
             .mb-8, .mb-6, .mb-4, .mb-3, .mb-2 {
-                margin-bottom: 0.5rem !important; /* Reduce margins for tighter print layout */
+                margin-bottom: 0.4rem !important; /* Slightly reduce margins for tighter print layout */
             }
 
             /* Ensure image visibility and prevent overflow */
             img {
                 max-width: 100% !important;
                 height: auto !important;
+                display: block; /* Ensure images are block-level for consistent flow */
+                margin: 0.5rem auto !important; /* Center images and add vertical margin */
             }
 
-            /* Break content appropriately across pages */
+            /* Improve content breaking across pages */
             section {
-                page-break-inside: avoid; /* Avoid breaking sections across pages if possible */
+                page-break-inside: avoid; /* Keep sections together if possible */
                 page-break-after: auto; /* Allow page breaks after sections */
+                margin-bottom: 1.5rem !important; /* Add more space after sections for better page breaks */
             }
             h1, h2, h3, h4, h5, h6 {
                 page-break-after: avoid; /* Avoid page breaks immediately after headings */
                 page-break-inside: avoid;
+                margin-top: 1rem !important; /* Ensure headings have some space above them */
             }
             ul, ol {
                 page-break-inside: avoid;
+                margin-bottom: 0.5rem !important; /* Add some margin after lists */
+            }
+            li {
+                margin-bottom: 0.2rem !important; /* Small margin for list items */
             }
 
-            /* Remove elements not relevant to print (e.g., interactive buttons if they cause issues) */
+            /* Ensure grid layouts adapt for print */
+            .grid {
+                display: block !important; /* Stack grid items for print */
+            }
+            .grid > div {
+                width: 100% !important; /* Ensure grid items take full width */
+                margin-bottom: 1rem !important; /* Add space between stacked grid items */
+            }
+
+            /* Adjust button display for print */
             .flex-col.sm:flex-row.justify-center.gap-4 {
-                display: block !important; /* Stack buttons vertically if needed */
-                text-align: center;
+                display: flex !important; /* Keep flex for centering */
+                flex-direction: column !important; /* Stack buttons vertically */
+                align-items: center !important; /* Center stacked buttons */
+                gap: 0.5rem !important; /* Reduce gap for print */
             }
             .flex-col.sm:flex-row.justify-center.gap-4 a {
-                display: inline-block !important;
-                margin: 0.5rem !important;
-                width: auto !important; /* Allow buttons to size naturally */
+                display: block !important; /* Make buttons block-level for full width */
+                width: 80% !important; /* Give buttons a defined width */
+                max-width: 300px !important; /* Max width for larger screens */
+                margin: 0.25rem auto !important; /* Center individual buttons and add small vertical margin */
+                padding: 0.75rem 1.5rem !important; /* Adjust padding */
+                border: 1px solid #312e81 !important; /* Ensure borders are visible */
+                color: #312e81 !important; /* Dark text for primary button */
+                background-color: #ffffff !important; /* White background */
+            }
+            .flex-col.sm:flex-row.justify-center.gap-4 a.bg-indigo-600 {
+                background-color: #312e81 !important; /* Dark background for primary button */
+                color: #ffffff !important; /* White text for primary button */
+            }
+
+            /* Ensure main content wrapper takes full width */
+            .max-w-4xl {
+                max-width: 100% !important;
+                width: 100% !important;
+                padding: 1rem !important; /* Adjust padding for the main container */
             }
         }
     </style>
@@ -108,7 +145,7 @@
         <header class="text-center mb-8">
             <!-- ScreenerPro Logo - Using a placeholder for demonstration -->
             <!-- In a real application, replace this with your actual logo image URL -->
-            <img src="logo.png" alt="ScreenerPro Logo" class="mx-auto h-16 w-auto mb-4 rounded-lg shadow-md" />
+            <img src="https://placehold.co/150x50/60A5FA/FFFFFF?text=ScreenerPro+Logo" alt="ScreenerPro Logo" class="mx-auto h-16 w-auto mb-4 rounded-lg shadow-md" />
             <h1 class="text-5xl font-extrabold text-gray-900 mb-2">ScreenerPro</h1>
             <p class="text-xl text-indigo-600 font-medium">AI-powered Talent Acquisition & HR Management</p>
         </header>
@@ -291,6 +328,7 @@
             <!-- Advanced AI Capabilities Section -->
             <section class="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
                 <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Advanced AI Capabilities</h2>
+                <p class="text-lg text-center text-gray-700 mb-8">ScreenerPro's AI leverages advanced Natural Language Processing (NLP) and deep learning models, trained on extensive datasets of job descriptions and resumes. This allows it to understand the nuanced meaning of phrases, identify transferable skills, and match candidates based on contextual relevance, not just keyword presence.</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
                         <h3 class="text-2xl font-semibold text-indigo-700 mb-3">Semantic Understanding & Contextual Matching</h3>
