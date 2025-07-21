@@ -42,12 +42,14 @@
             body {
                 background-color: #ffffff !important; /* Ensure white background for print */
                 color: #000000 !important; /* Ensure black text for readability */
-                -webkit-print-color-adjust: exact; /* For printing backgrounds/colors */
-                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact !important; /* Force printing backgrounds/colors */
+                print-color-adjust: exact !important;
                 margin: 0 !important; /* Remove default body margins for print */
                 padding: 0 !important; /* Remove default body padding for print */
                 min-height: auto !important; /* Disable min-height for print */
                 display: block !important; /* Ensure body is block for print flow */
+                width: 100% !important; /* Ensure body takes full width */
+                overflow: visible !important; /* Prevent content from being hidden */
             }
 
             /* Remove shadows, gradients, and subtle backgrounds for cleaner print */
@@ -56,8 +58,18 @@
             }
             .bg-gradient-to-r, .bg-indigo-50, .bg-gray-100 {
                 background-image: none !important;
-                background-color: #ffffff !important; /* Ensure backgrounds are white */
+                background-color: #ffffff !important; /* Ensure all backgrounds are white */
             }
+            /* Specifically target the gradient section to ensure its text is black */
+            section.bg-gradient-to-r {
+                background-color: #ffffff !important; /* Force white background */
+                color: #000000 !important; /* Force black text */
+            }
+            section.bg-gradient-to-r h2,
+            section.bg-gradient-to-r p {
+                color: #000000 !important; /* Ensure all text within this section is black */
+            }
+
             .text-white {
                 color: #000000 !important; /* Ensure white text on colored backgrounds becomes black */
             }
@@ -92,7 +104,8 @@
                 page-break-inside: avoid !important; /* Keep sections together if possible */
                 page-break-after: auto !important; /* Allow page breaks after sections */
                 margin-bottom: 1.5rem !important; /* Add more space after sections for better page breaks */
-                border: none !important; /* Remove section borders if they cause issues */
+                border: 1px solid #e0e0e0 !important; /* Add a subtle border to sections for separation */
+                padding: 1rem !important; /* Adjust padding within sections for print */
             }
             /* Force major sections to start on a new page */
             section:not(:first-child) { /* Apply to all sections except the first one */
@@ -128,6 +141,7 @@
                 margin-bottom: 1rem !important; /* Add space between stacked grid items */
                 padding: 0.5rem !important; /* Adjust padding for stacked items */
                 page-break-inside: avoid !important; /* Prevent individual grid items from breaking */
+                border: 1px solid #f3f4f6 !important; /* Add a subtle border to grid items for separation */
             }
             /* Specific targeting for the 3-column benefits grid */
             .grid-cols-1.md:grid-cols-3 > div {
@@ -161,6 +175,7 @@
                 color: #312e81 !important; /* Dark text for primary button */
                 background-color: #ffffff !important; /* White background */
                 text-decoration: none !important; /* Remove underline from links */
+                box-shadow: none !important; /* Remove shadows from buttons */
             }
             .flex-col.sm:flex-row.justify-center.gap-4 a.bg-indigo-600 {
                 background-color: #312e81 !important; /* Dark background for primary button */
