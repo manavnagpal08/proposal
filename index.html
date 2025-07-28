@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,6 +31,26 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #808080;
         }
+        /* Style for iframes to ensure they are responsive and look good */
+        .responsive-iframe-container {
+            position: relative;
+            padding-bottom: 75%; /* Adjust as needed, e.g., 56.25% for 16:9, 75% for 4:3 */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #f0f2f5; /* Background for loading */
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .responsive-iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            border-radius: 12px;
+        }
     </style>
 </head>
 <body class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
@@ -40,7 +59,7 @@
         <header class="text-center mb-8">
             <!-- ScreenerPro Logo - Using a placeholder for demonstration -->
             <!-- In a real application, replace this with your actual logo image URL -->
-            <img src="logo.png" alt="ScreenerPro Logo" class="mx-auto h-16 w-auto mb-4 rounded-lg shadow-md" />
+            <img src="https://placehold.co/150x50/007bff/ffffff?text=ScreenerPro" alt="ScreenerPro Logo" class="mx-auto h-16 w-auto mb-4 rounded-lg shadow-md" />
             <h1 class="text-5xl font-extrabold text-gray-900 mb-2">ScreenerPro</h1>
             <p class="text-xl text-indigo-600 font-medium">AI-powered Talent Acquisition & HR Management</p>
         </header>
@@ -186,6 +205,60 @@
                 </div>
             </section>
 
+            <!-- Public Job Board Section (New Feature 1) -->
+            <section class="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">🌐 Explore Our Public Job Board</h2>
+                <p class="text-lg text-center text-gray-700 mb-8">Candidates can browse and apply for jobs directly through this public-facing portal. Experience the seamless application process and instant AI screening.</p>
+                <div class="responsive-iframe-container">
+                    <!-- IMPORTANT: Replace the src with your deployed Public Job Board Streamlit app URL -->
+                    <iframe src="https://your-public-job-board-app-url.streamlit.app" title="ScreenerPro Public Job Board"></iframe>
+                </div>
+                <p class="text-sm text-center text-gray-500 mt-4">*(Note: This is an embedded application. Replace the iframe src with your actual deployed Streamlit app URL for full functionality.)*</p>
+            </section>
+
+            <!-- HR Campaign Creator Section (New Feature 2) -->
+            <section class="bg-gray-100 p-8 rounded-lg shadow-lg border border-gray-200">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">✨ Manage Your Campaigns (HR Portal)</h2>
+                <p class="text-lg text-center text-gray-700 mb-8">For HR professionals: Create and manage your job campaigns, track applications, and view screening analytics in real-time. This portal gives you full control over your recruitment efforts.</p>
+                <div class="responsive-iframe-container">
+                    <!-- IMPORTANT: Replace the src with your deployed HR Campaign Creator Streamlit app URL -->
+                    <iframe src="https://your-hr-campaign-app-url.streamlit.app" title="ScreenerPro HR Campaign Creator"></iframe>
+                </div>
+                <p class="text-sm text-center text-gray-500 mt-4">*(Note: This is an embedded application. Replace the iframe src with your actual deployed Streamlit app URL for full functionality.)*</p>
+            </section>
+
+            <!-- Candidate Portal & Certificate Verification Section (New Feature) -->
+            <section class="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">👤 Candidate Portal & Certificate Verification</h2>
+                <p class="text-lg text-center text-gray-700 mb-8">Empower your candidates with a dedicated portal to track their applications, view detailed AI screening results, and verify their ScreenerPro certifications. This fosters transparency and enhances the candidate experience.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-indigo-700 mb-3">Personalized Application Tracking</h3>
+                        <p class="text-gray-700 mb-4">Candidates can log in to a secure portal to see the status of their applications, review their AI match scores, and access personalized feedback, keeping them informed throughout the hiring journey.</p>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li>Real-time updates on application status.</li>
+                            <li>Access to AI screening reports.</li>
+                            <li>Personalized insights on skill alignment.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold text-indigo-700 mb-3">Official Certificate Verification</h3>
+                        <p class="text-gray-700 mb-4">ScreenerPro issues unique digital certificates for successful screenings. The portal provides a public verification tool, allowing employers and educational institutions to instantly validate the authenticity and details of a candidate's ScreenerPro certificate, adding significant credibility.</p>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li>Instant validation of certificate authenticity.</li>
+                            <li>Secure and tamper-proof digital certificates.</li>
+                            <li>Enhances candidate credibility for future opportunities.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="responsive-iframe-container mt-8">
+                    <!-- IMPORTANT: Replace the src with your deployed Candidate Portal/Certificate Verification Streamlit app URL -->
+                    <!-- For now, you can point this to your public job board app's certificate verification page if it handles it. -->
+                    <iframe src="https://your-public-job-board-app-url.streamlit.app?page=Certificate%20Verification" title="ScreenerPro Candidate Portal"></iframe>
+                </div>
+                <p class="text-sm text-center text-gray-500 mt-4">*(Note: This is an embedded application. Replace the iframe src with your actual deployed Streamlit app URL for full functionality, or link to your public job board's certificate verification page.)*</p>
+            </section>
+
             <!-- Benefits for Different Stakeholders Section -->
             <section class="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
                 <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Benefits for Every Stakeholder</h2>
@@ -243,7 +316,7 @@
                         </ul>
                     </div>
                     <div>
-                        <h3 class="text-2xl font-semibold text-indigo-700 mb-3">Automated Skill & Competency Extraction</h3>
+                        <h3 class="2xl font-semibold text-indigo-700 mb-3">Automated Skill & Competency Extraction</h3>
                         <p class="text-gray-700 mb-4">ScreenerPro automatically identifies, categorizes, and quantifies both hard and soft skills from resumes. It builds a standardized skill inventory, enabling easy comparison, talent mapping, and identification of skill gaps within your existing workforce or candidate pool.</p>
                         <ul class="list-disc list-inside text-gray-600 space-y-2">
                             <li>Recognizes technical skills, soft skills, and industry-specific expertise.</li>
@@ -431,7 +504,7 @@
                         <p class="text-gray-700 mb-4">To be the leading AI-powered HR platform that redefines talent acquisition and management, fostering diverse, high-performing workforces globally.</p>
                     </div>
                     <div>
-                        <h3 class="text-2xl font-semibold text-indigo-700 mb-3">Our Commitment</h3>
+                        <h3 class="2xl font-semibold text-indigo-700 mb-3">Our Commitment</h3>
                         <p class="text-gray-700 mb-4">We are committed to continuous innovation, uncompromising data security, and delivering exceptional value through a platform that is intuitive, powerful, and ethically designed.</p>
                     </div>
                 </div>
